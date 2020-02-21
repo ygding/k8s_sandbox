@@ -1,0 +1,24 @@
+#kubectl expose deployment webapp -n kubeguide
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webapp
+  namespace: kubeguide
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: webapp
+  template:
+    metadata:
+      name: webapp
+      labels:
+        app: webapp
+    spec:
+      containers:
+        - name: webapp
+          image: tomcat
+          ports:
+            - containerPort: 8080
+---

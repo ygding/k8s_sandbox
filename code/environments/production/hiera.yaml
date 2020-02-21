@@ -1,0 +1,12 @@
+---
+version: 5
+hierarchy:
+  - name: all-in-one
+    datadir: hieradata
+    data_hash: yaml_data
+    paths:
+      - "%{::hostname}.yaml"
+      - "hosts/%{::hostname}.yaml"
+      - "%{::hostgroup}.yaml"
+      - "%{::osfamily}.yaml"
+      - "common.yaml"
